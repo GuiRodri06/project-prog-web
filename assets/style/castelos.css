@@ -36,6 +36,11 @@ header {
     align-items: center;
     padding: 1rem 2rem;
     flex-wrap: wrap;
+    position: sticky; /* Torna o header sticky para acompanhar o scroll */
+    top: 0; /* Fixa no topo da tela */
+    z-index: 1000; /* Garante que fique acima de outros elementos */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Adiciona sombra para destacar */
+    border-bottom: 2px solid #ffdada; /* Borda inferior para mais elegância */
 }
 
 .logo h1 {
@@ -53,13 +58,15 @@ nav a {
     color: #fff;
     text-decoration: none;
     font-weight: 500;
-    transition: color 0.3s;
+    transition: color 0.3s, background-color 0.3s;
+    padding: 0.5rem 1rem; /* Adiciona padding para área clicável maior */
+    border-radius: 4px; /* Bordas arredondadas */
 }
 
 nav a:hover {
     color: #ffdada;
+    background-color: rgba(255, 218, 218, 0.2); /* Fundo sutil no hover */
 }
-
 
 /* ---------------------- */
 /* LISTA DE CASTELOS (Layout Linear: Nome > Texto > Imagem) */
