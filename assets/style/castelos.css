@@ -1,0 +1,211 @@
+/* ---------------------- */
+/* ARQUIVO: castelos.css  */
+/* ---------------------- */
+
+/* ---------------------- */
+/* RESET E BASE GLOBAL    */
+/* ---------------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, sans-serif;
+    color: #2c2c2c;
+    background-color: #fdf5f5;
+    line-height: 1.6;
+}
+
+/* Paleta:
+    Vermelho escuro: #8b0000
+    Vermelho médio: #b22222
+    Fundo claro rosado: #fdf5f5
+    Branco: #fff
+*/
+
+/* ---------------------- */
+/* CABEÇALHO              */
+/* ---------------------- */
+header {
+    background: linear-gradient(90deg, #8b0000, #b22222);
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    flex-wrap: wrap;
+}
+
+.logo h1 {
+    font-size: 1.7rem;
+    letter-spacing: 1px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #ffdada;
+}
+
+
+/* ---------------------- */
+/* LISTA DE CASTELOS (Layout Linear: Nome > Texto > Imagem) */
+/* ---------------------- */
+.lista-castelos {
+    padding: 3rem 1rem;
+    max-width: 900px; /* Largura ideal para conteúdo */
+    margin: auto;
+    text-align: left;
+}
+
+.lista-castelos h2 {
+    color: #8b0000;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+.lista-castelos p:first-of-type { /* Parágrafo introdutório */
+    margin-bottom: 2.5rem;
+    color: #555;
+    text-align: center;
+}
+
+.grid-castelos-detalhados {
+    display: block; 
+    /* Inicializa o contador de castelos */
+    counter-reset: castelo-counter;
+}
+
+/* ---------------------- */
+/* ESTILO DE CADA CASTELO (Item da Lista) */
+/* ---------------------- */
+
+.castelo-detalhe {
+    display: block; 
+    /* Usamos a cor do fundo para criar separação */
+    background: #ffffff; 
+    padding: 2rem 1.5rem; 
+    margin-bottom: 3rem; /* Espaço generoso entre os castelos */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05); /* Sombra para elevar o bloco */
+    border-radius: 8px;
+    border-left: 5px solid #b22222; /* Linha lateral decorativa */
+    transition: box-shadow 0.3s ease;
+}
+
+.castelo-detalhe:hover {
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+/* Bloco de informação (Título e Parágrafo) */
+.castelo-detalhe .info {
+    position: relative;
+    margin-bottom: 1rem; 
+}
+
+/* Nome do Castelo (enumerado) */
+.castelo-detalhe h3 {
+    color: #8b0000;
+    margin-bottom: 0.5rem;
+    font-size: 1.8rem;
+    padding-left: 45px; /* Espaço para o número */
+    display: inline-block;
+}
+
+/* Texto mediano sobre o castelo */
+.castelo-detalhe p {
+    color: #333;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-top: 0.8rem;
+    margin-bottom: 0;
+}
+
+/* Imagem do Castelo */
+.imagem-container {
+    width: 100%;
+    margin-top: 2rem; /* Espaçamento entre o texto e a imagem */
+}
+
+.castelo-detalhe img {
+    width: 100%; 
+    max-height: 400px; /* Limita a altura da imagem */
+    object-fit: cover;
+    border-radius: 6px;
+    display: block; 
+}
+
+/* ---------------------- */
+/* NUMERAÇÃO (CSS Counters) */
+/* ---------------------- */
+
+.castelo-detalhe .info h3::before {
+    counter-increment: castelo-counter;
+    content: counter(castelo-counter) ".";
+    /* Estilização do número */
+    position: absolute;
+    left: 0;
+    top: 5px;
+    font-size: 1.6rem; /* Número um pouco maior */
+    font-weight: 700;
+    color: #b22222;
+}
+
+/* ---------------------- */
+/* RODAPÉ                 */
+/* ---------------------- */
+footer {
+    text-align: center;
+    background: #8b0000;
+    color: white;
+    padding: 1.5rem;
+    margin-top: 3rem;
+    font-size: 0.9rem;
+}
+
+/* ---------------------- */
+/* RESPONSIVIDADE         */
+/* ---------------------- */
+@media (max-width: 700px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 0.7rem;
+        margin-top: 0.5rem;
+    }
+    
+    .castelo-detalhe {
+        padding: 1.5rem 1rem;
+        margin-bottom: 2rem;
+    }
+    
+    /* Ajusta a numeração para ser in-line em telas pequenas */
+    .castelo-detalhe .info h3 {
+        padding-left: 0;
+        display: block;
+        text-align: left;
+    }
+
+    .castelo-detalhe .info h3::before {
+        position: static;
+        display: inline;
+        margin-right: 5px;
+    }
+}

@@ -60,7 +60,7 @@ nav a:hover {
 /* HERO / CAPA            */
 /* ---------------------- */
 .hero {
-  background: url('assets/img/castelo-bg.jpg') center/cover no-repeat;
+  background: url('/assets/img/castleportugal.jpg') center/cover no-repeat;
   color: white;
   text-align: center;
   padding: 6rem 1rem;
