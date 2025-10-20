@@ -1,0 +1,168 @@
+/* ======= Estilo geral ======= */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #fff5f5;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* ======= Cabeçalho ======= */
+header {
+  background-color: #8b0000;
+  color: #fff;
+  text-align: center;
+  padding: 1rem 0;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 0.5rem;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover,
+nav a.ativo {
+  text-decoration: underline;
+}
+
+/* ======= Área principal ======= */
+main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem 1rem;
+}
+
+/* ======= Container do formulário ======= */
+.formulario-contato {
+  background-color: #ffe5e5;
+  border-radius: 10px;
+  padding: 3rem 3rem; /* mais espaço nas laterais */
+  max-width: 700px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* centraliza tudo */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  box-sizing: border-box;
+}
+
+/* ======= Títulos ======= */
+.formulario-contato h2 {
+  text-align: center;
+  color: #8b0000;
+  margin-bottom: 0.5rem;
+}
+
+.formulario-contato p {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  color: #444;
+  font-size: 1rem;
+  line-height: 1.5;
+  max-width: 550px;
+}
+
+/* ======= Formulário ======= */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 500px; /* evita que encoste nas laterais */
+}
+
+/* ======= Campos ======= */
+.grupo-campos {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-weight: bold;
+  color: #8b0000;
+  margin-bottom: 0.5rem;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 0.9rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  resize: vertical;
+  background-color: #fff;
+}
+
+input:focus,
+textarea:focus {
+  border-color: #8b0000;
+  outline: none;
+  box-shadow: 0 0 6px rgba(139, 0, 0, 0.3);
+}
+
+/* ======= Botão ======= */
+button {
+  padding: 0.9rem;
+  background-color: #8b0000;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+  background-color: #a30000;
+  transform: scale(1.02);
+}
+
+/* ======= Rodapé ======= */
+footer {
+  background-color: #8b0000;
+  color: #fff;
+  text-align: center;
+  padding: 1rem 0;
+}
+
+/* ======= Responsividade ======= */
+@media (max-width: 600px) {
+  .formulario-contato {
+    padding: 2rem;
+  }
+
+  form {
+    max-width: 100%;
+  }
+
+  input,
+  textarea {
+    font-size: 0.95rem;
+  }
+
+  button {
+    font-size: 1rem;
+  }
+}
