@@ -10,37 +10,47 @@ body {
   min-height: 100vh;
 }
 
-/* ======= Cabeçalho ======= */
+/* ---------------------- */
+/* CABEÇALHO              */
+/* ---------------------- */
 header {
-  background-color: #8b0000;
-  color: #fff;
-  text-align: center;
-  padding: 1rem 0;
+    background: linear-gradient(90deg, #8b0000, #b22222);
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    flex-wrap: wrap;
+    position: sticky; /* Torna o header sticky para acompanhar o scroll */
+    top: 0; /* Fixa no topo da tela */
+    z-index: 1000; /* Garante que fique acima de outros elementos */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Adiciona sombra para destacar */
+    border-bottom: 2px solid #ffdada; /* Borda inferior para mais elegância */
 }
 
-header h1 {
-  margin: 0;
-  font-size: 2rem;
+.logo h1 {
+    font-size: 1.7rem;
+    letter-spacing: 1px;
 }
 
 nav ul {
-  list-style: none;
-  padding: 0;
-  margin-top: 0.5rem;
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
 }
 
 nav a {
-  color: #fff;
-  text-decoration: none;
-  font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s, background-color 0.3s;
+    padding: 0.5rem 1rem; /* Adiciona padding para área clicável maior */
+    border-radius: 4px; /* Bordas arredondadas */
 }
 
-nav a:hover,
-nav a.ativo {
-  text-decoration: underline;
+nav a:hover {
+    color: #ffdada;
+    background-color: rgba(255, 218, 218, 0.2); /* Fundo sutil no hover */
 }
 
 /* ======= Área principal ======= */
@@ -139,12 +149,134 @@ button:hover {
   transform: scale(1.02);
 }
 
-/* ======= Rodapé ======= */
+/* ---------------------- */
+/* RODAPÉ */
+/* ---------------------- */
 footer {
-  background-color: #8b0000;
-  color: #fff;
+  background: radial-gradient(circle at top left, #660000 0%, #3b0000 100%);
+  color: #f5f5f5;
+  padding: 3rem 1rem 1.5rem;
+  font-family: 'Poppins', sans-serif;
+  border-top: 3px solid #ffd700;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 250px;
+}
+
+.footer-section h3, 
+.footer-section h4 {
+  color: #ffd700;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.footer-section p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #e0e0e0;
+  margin-bottom: 1.2rem;
+}
+
+/* Links rápidos */
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin: 0.6rem 0;
+}
+
+.footer-section ul li a {
+  color: #f5f5f5;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.3s ease, transform 0.2s ease;
+  display: inline-block;
+}
+
+.footer-section ul li a:hover {
+  color: #ffd700;
+  transform: translateX(4px);
+}
+
+/* Ícones sociais */
+.social-icons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.social-icons a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 215, 0, 0.15);
+  border: 1px solid #ffd700;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+  background: #ffd700;
+  transform: scale(1.1);
+}
+
+.social-icons img {
+  width: 18px;
+  height: 18px;
+  filter: brightness(0) invert(1);
+  transition: filter 0.3s ease;
+}
+
+.social-icons a:hover img {
+  filter: brightness(0);
+}
+
+/* Parte inferior */
+.footer-bottom {
   text-align: center;
-  padding: 1rem 0;
+  margin-top: 2.5rem;
+  border-top: 1px solid rgba(255, 215, 0, 0.3);
+  padding-top: 1rem;
+  font-size: 0.9rem;
+  color: #dcdcdc;
+}
+
+.footer-bottom span {
+  color: #ffd700;
+  font-weight: 600;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .social-icons {
+    justify-content: center;
+  }
+
+  .footer-section h3,
+  .footer-section h4 {
+    margin-top: 1rem;
+  }
 }
 
 /* ======= Responsividade ======= */
