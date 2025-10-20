@@ -1,4 +1,6 @@
-/* Reset básico */
+/* ---------------------- */
+/* RESET E BASE GLOBAL    */
+/* ---------------------- */
 * {
   margin: 0;
   padding: 0;
@@ -6,98 +8,244 @@
 }
 
 body {
-  font-family: 'Segoe UI', Tahoma, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, sans-serif;
+  color: #2c2c2c;
+  background-color: #fdf5f5;
   line-height: 1.6;
-  color: #222;
-  background-color: #fdfdfd;
 }
 
-/* Cabeçalho */
+/* Paleta:
+   Vermelho escuro: #8b0000
+   Vermelho médio: #b22222
+   Fundo claro rosado: #fdf5f5
+   Branco: #fff
+*/
+
+/* ---------------------- */
+/* CABEÇALHO              */
+/* ---------------------- */
 header {
-  background: #333;
+  background: linear-gradient(90deg, #8b0000, #b22222);
   color: #fff;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
+  flex-wrap: wrap;
 }
 
-header h1 {
-  font-size: 1.5rem;
+.logo h1 {
+  font-size: 1.7rem;
+  letter-spacing: 1px;
 }
 
 nav ul {
-  display: flex;
   list-style: none;
+  display: flex;
   gap: 1.5rem;
 }
 
 nav a {
   color: #fff;
   text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
 }
 
 nav a:hover {
-  text-decoration: underline;
+  color: #ffdada;
 }
 
-/* Hero */
+/* ---------------------- */
+/* HERO / CAPA            */
+/* ---------------------- */
 .hero {
-  background: url('imagens/castelo-bg.jpg') center/cover no-repeat;
+  background: url('assets/img/castelo-bg.jpg') center/cover no-repeat;
   color: white;
   text-align: center;
-  padding: 4rem 1rem;
-  background-color: #222;
+  padding: 6rem 1rem;
+  position: relative;
 }
 
-.hero h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
+.hero::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.5);
 }
 
-/* Grid de castelos */
-.castelos {
-  padding: 2rem;
-  max-width: 1200px;
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
   margin: auto;
 }
 
-.grid-castelos {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1.5rem;
+.hero h2 {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
 }
 
+.hero p {
+  margin-bottom: 1.5rem;
+}
+
+.btn {
+  display: inline-block;
+  background: #b22222;
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background: #8b0000;
+}
+
+/* ---------------------- */
+/* SEÇÃO CASTELOS         */
+/* ---------------------- */
+.castelos {
+  padding: 3rem 1rem;
+  max-width: 1200px;
+  margin: auto;
+  text-align: center;
+}
+
+.castelos h2 {
+  font-size: 2rem;
+  color: #8b0000;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.castelos h2::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 3px;
+  background: #b22222;
+  margin: 0.5rem auto;
+}
+
+/* Layout com Grid */
+.grid-castelos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+/* Card dos castelos */
 .castelo {
   background: #fff;
-  border: 1px solid #ddd;
-  border-radius: 8px;
+  border: 1px solid #f1cccc;
+  border-radius: 10px;
   overflow: hidden;
-  text-align: center;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.castelo:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* Tornar o artigo inteiro clicável */
+.castelo a {
+  display: block;
+  height: 100%;
+  color: inherit;
+  text-decoration: none;
 }
 
 .castelo img {
   width: 100%;
-  height: 180px;
+  height: 200px;
   object-fit: cover;
+  transition: filter 0.3s;
+}
+
+/* Efeitos ao passar o rato */
+.castelo a:hover img {
+  filter: brightness(0.9);
+}
+
+.castelo a:hover h3 {
+  color: #8b0000;
+  transition: color 0.3s;
 }
 
 .castelo h3 {
-  padding: 0.8rem;
+  color: #b22222;
+  margin-top: 1rem;
 }
 
-/* Rodapé */
+.castelo p {
+  padding: 0.8rem 1.2rem 1.5rem;
+  font-size: 0.95rem;
+  color: #333;
+}
+
+/* ---------------------- */
+/* CURIOSIDADES           */
+/* ---------------------- */
+.curiosidades {
+  background: #fbecec;
+  padding: 3rem 1rem;
+  text-align: center;
+}
+
+.curiosidades h2 {
+  font-size: 2rem;
+  color: #8b0000;
+  margin-bottom: 2rem;
+}
+
+.curiosidades-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.curiosidades article {
+  background: white;
+  border: 1px solid #f1cccc;
+  border-radius: 8px;
+  padding: 1.5rem;
+  max-width: 350px;
+  flex: 1;
+  transition: transform 0.3s;
+}
+
+.curiosidades article:hover {
+  transform: scale(1.03);
+}
+
+.curiosidades h3 {
+  color: #b22222;
+  margin-bottom: 0.5rem;
+}
+
+/* ---------------------- */
+/* RODAPÉ                 */
+/* ---------------------- */
 footer {
   text-align: center;
-  background: #333;
+  background: #8b0000;
   color: white;
-  padding: 1rem;
-  margin-top: 2rem;
+  padding: 1.5rem;
+  margin-top: 3rem;
+  font-size: 0.9rem;
 }
 
-/* Responsividade */
-@media (max-width: 600px) {
+/* ---------------------- */
+/* RESPONSIVIDADE         */
+/* ---------------------- */
+@media (max-width: 700px) {
   header {
     flex-direction: column;
     text-align: center;
@@ -105,6 +253,11 @@ footer {
 
   nav ul {
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 0.7rem;
+    margin-top: 0.5rem;
+  }
+
+  .hero h2 {
+    font-size: 1.6rem;
   }
 }
