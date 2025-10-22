@@ -63,7 +63,7 @@ nav a.ativo {
 
 /* CAPA */
 .capa {
-    background: url('/assets/img/castleportugal.jpg') center/cover no-repeat;
+    background: url('../img/castleportugal.jpg') center/cover no-repeat;
     color: white;
     text-align: center;
     padding: 6rem 1rem;
