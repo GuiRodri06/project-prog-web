@@ -1,4 +1,4 @@
-/* ======= Estilo geral ======= */
+/* ESTILO GERAL */
 * {
     margin: 0;
     padding: 0;
@@ -12,9 +12,8 @@ body {
     line-height: 1.6;
 }
 
-/* ---------------------- */
-/* CABEÇALHO              */
-/* ---------------------- */
+/* CABEÇALHO */
+
 header {
     background: linear-gradient(90deg, #8b0000, #b22222);
     color: #fff;
@@ -50,12 +49,13 @@ nav a {
     border-radius: 4px; /* Bordas arredondadas */
 }
 
-nav a:hover {
-    color: #ffdada;
-    background-color: rgba(255, 218, 218, 0.2); /* Fundo sutil no hover */
+nav a:hover,
+nav a.ativo {
+  color: #ffdada;
+  background-color: rgba(255, 218, 218, 0.2);
 }
 
-/* ======= Área principal ======= */
+/* Área principal */
 main {
   flex: 1;
   display: flex;
@@ -64,7 +64,7 @@ main {
   padding: 3rem 1rem;
 }
 
-/* ======= Container do formulário ======= */
+/* Container do formulário */
 .formulario-contato {
   background-color: #ffe5e5;
   border-radius: 10px;
@@ -80,7 +80,7 @@ main {
   box-sizing: border-box;
 }
 
-/* ======= Títulos ======= */
+/* Títulos */
 .formulario-contato h2 {
   text-align: center;
   color: #8b0000;
@@ -96,7 +96,7 @@ main {
   max-width: 550px;
 }
 
-/* ======= Formulário ======= */
+/* Formulário */
 form {
   display: flex;
   flex-direction: column;
@@ -109,7 +109,7 @@ form {
   margin: 0 auto;
 }
 
-/* ======= Campos ======= */
+/* Campos */
 .grupo-campos {
   width: 100%;
   display: flex;
@@ -142,7 +142,7 @@ textarea:focus {
   box-shadow: 0 0 6px rgba(139, 0, 0, 0.25);
 }
 
-/* ======= Botão ======= */
+/* Botão */
 button {
   padding: 0.7rem 2rem;
   background-color: #8b0000;
@@ -163,10 +163,51 @@ button:hover {
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
 }
 
+/* Mensagem de sucesso */
+#mensagem-sucesso {
+  display: none;
+  background-color: #e6ffed;
+  color: #0b7a29;
+  border: 1px solid #3ecf4c;
+  border-radius: 8px;
+  padding: 12px 16px;
+  margin-top: 15px;
+  font-weight: 600;
+  text-align: center;
+  animation: fadeIn 0.4s ease-in-out;
+}
 
-/* ---------------------- */
+/* Efeito de entrada suave */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Efeito de saída suave (opcional, usado com JS se quiseres) */
+.fade-out {
+  animation: fadeOut 0.5s ease-in-out forwards;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+}
+
+
 /* RODAPÉ */
-/* ---------------------- */
+
 footer {
   background: radial-gradient(circle at top left, #660000 0%, #3b0000 100%);
   color: #f5f5f5;
@@ -277,7 +318,7 @@ footer {
   font-weight: 600;
 }
 
-/* Responsividade */
+/* Responsividade footer */
 @media (max-width: 768px) {
   .footer-container {
     flex-direction: column;
@@ -294,7 +335,7 @@ footer {
   }
 }
 
-/* ======= Responsividade ======= */
+/* Responsividade */
 @media (max-width: 700px) {
   header {
     flex-direction: column;

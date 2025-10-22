@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-PT">
 
 <head>
   <meta charset="UTF-8">
@@ -16,9 +16,9 @@
     <nav>
       <ul>
         <li><a href="index.html">Início</a></li>
-        <li><a href="#">História</a></li>
-        <li><a href="#">Galeria</a></li>
-        <li><a href="contato.html">Contato</a></li>
+        <li><a href="castelos.html">Castelos</a></li>
+        <li><a href="agencias.html">Agências</a></li>
+        <li><a href="contato.html" class="ativo">Contacto</a></li>
       </ul>
     </nav>
   </header>
@@ -29,7 +29,7 @@
       <p>Tem alguma dúvida, sugestão ou quer partilhar uma experiência sobre um castelo?
         Preencha o formulário abaixo e fale connosco!</p>
 
-      <form action="#" method="post">
+      <form id="form-contato" action="#" method="post">
         <div class="grupo-campos">
           <label for="nome">Nome:</label>
           <input type="text" id="nome" name="nome" placeholder="Seu nome completo" required>
@@ -53,8 +53,13 @@
 
         <button type="submit">Enviar</button>
       </form>
+
+       <p id="mensagem-sucesso">
+        Opinião enviada com sucesso! Agradecemos sua contribuição!
+      </p>
     </section>
   </main>
+  <script src="../assets/script/contato.js"></script>
 
   <!-- RODAPÉ -->
   <footer>
@@ -72,8 +77,8 @@
         <ul>
           <li><a href="index.html">Início</a></li>
           <li><a href="castelos.html">Castelos</a></li>
-          <li><a href="historia.html">História</a></li>
-          <li><a href="contato.html">Contato</a></li>
+          <li><a href="agencias.html">Agências</a></li>
+          <li><a href="contato.html">Contacto</a></li>
         </ul>
       </div>
 
@@ -99,5 +104,4 @@
   </footer>
 
 </body>
-
 </html>

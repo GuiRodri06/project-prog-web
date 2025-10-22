@@ -1,10 +1,4 @@
-/* ---------------------- */
-/* ARQUIVO: castelos.css  */
-/* ---------------------- */
-
-/* ---------------------- */
-/* RESET E BASE GLOBAL    */
-/* ---------------------- */
+/* ESTILO GERAL */
 * {
     margin: 0;
     padding: 0;
@@ -18,16 +12,9 @@ body {
     line-height: 1.6;
 }
 
-/* Paleta:
-    Vermelho escuro: #8b0000
-    Vermelho médio: #b22222
-    Fundo claro rosado: #fdf5f5
-    Branco: #fff
-*/
 
-/* ---------------------- */
-/* CABEÇALHO              */
-/* ---------------------- */
+/* CABEÇALHO  */
+
 header {
     background: linear-gradient(90deg, #8b0000, #b22222);
     color: #fff;
@@ -63,14 +50,15 @@ nav a {
     border-radius: 4px; /* Bordas arredondadas */
 }
 
-nav a:hover {
-    color: #ffdada;
-    background-color: rgba(255, 218, 218, 0.2); /* Fundo sutil no hover */
+nav a:hover,
+nav a.ativo {
+  color: #ffdada;
+  background-color: rgba(255, 218, 218, 0.2);
 }
 
-/* ---------------------- */
+
 /* LISTA DE CASTELOS (Layout Linear: Nome > Texto > Imagem) */
-/* ---------------------- */
+
 .lista-castelos {
     padding: 3rem 1rem;
     max-width: 900px; /* Largura ideal para conteúdo */
@@ -97,9 +85,8 @@ nav a:hover {
     counter-reset: castelo-counter;
 }
 
-/* ---------------------- */
-/* ESTILO DE CADA CASTELO (Item da Lista) */
-/* ---------------------- */
+
+/* ESTILO DE CADA CASTELO */
 
 .castelo-detalhe {
     display: block; 
@@ -155,9 +142,7 @@ nav a:hover {
     display: block; 
 }
 
-/* ---------------------- */
 /* NUMERAÇÃO (CSS Counters) */
-/* ---------------------- */
 
 .castelo-detalhe .info h3::before {
     counter-increment: castelo-counter;
@@ -171,9 +156,8 @@ nav a:hover {
     color: #b22222;
 }
 
-/* ---------------------- */
 /* RODAPÉ */
-/* ---------------------- */
+
 footer {
   background: radial-gradient(circle at top left, #660000 0%, #3b0000 100%);
   color: #f5f5f5;
@@ -284,7 +268,7 @@ footer {
   font-weight: 600;
 }
 
-/* Responsividade */
+/* Responsividade footer */
 @media (max-width: 768px) {
   .footer-container {
     flex-direction: column;
@@ -301,9 +285,8 @@ footer {
   }
 }
 
-/* ---------------------- */
-/* RESPONSIVIDADE         */
-/* ---------------------- */
+/* RESPONSIVIDADE */
+
 @media (max-width: 700px) {
     header {
         flex-direction: column;

@@ -1,6 +1,4 @@
-/* ---------------------- */
-/* RESET E BASE GLOBAL */
-/* ---------------------- */
+/* ESTILO GERAL */
 * {
     margin: 0;
     padding: 0;
@@ -14,11 +12,14 @@ body {
     line-height: 1.6;
 }
 
-/* Paleta: Vermelho escuro: #8b0000 Vermelho médio: #b22222 Fundo claro rosado: #fdf5f5 Branco: #fff */
+/*  
+Paleta: Vermelho escuro: #8b0000 
+Vermelho médio: #b22222 
+Fundo claro rosado: #fdf5f5 
+Branco: #fff 
+*/
 
-/* ---------------------- */
 /* CABEÇALHO */
-/* ---------------------- */
 header {
     background: linear-gradient(90deg, #8b0000, #b22222);
     color: #fff;
@@ -30,8 +31,8 @@ header {
     position: sticky; /* Torna o header sticky para acompanhar o scroll */
     top: 0; /* Fixa no topo da tela */
     z-index: 1000; /* Garante que fique acima de outros elementos */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Adiciona sombra para destacar */
-    border-bottom: 2px solid #ffdada; /* Borda inferior para mais elegância */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    border-bottom: 2px solid #ffdada; /* Borda inferior */
 }
 
 .logo h1 {
@@ -50,19 +51,18 @@ nav a {
     text-decoration: none;
     font-weight: 500;
     transition: color 0.3s, background-color 0.3s;
-    padding: 0.5rem 1rem; /* Adiciona padding para área clicável maior */
-    border-radius: 4px; /* Bordas arredondadas */
+    padding: 0.5rem 1rem; 
+    border-radius: 4px; 
 }
 
-nav a:hover {
-    color: #ffdada;
-    background-color: rgba(255, 218, 218, 0.2); /* Fundo sutil no hover */
+nav a:hover,
+nav a.ativo {
+  color: #ffdada;
+  background-color: rgba(255, 218, 218, 0.2);
 }
 
-/* ---------------------- */
-/* HERO / CAPA */
-/* ---------------------- */
-.hero {
+/* CAPA */
+.capa {
     background: url('/assets/img/castleportugal.jpg') center/cover no-repeat;
     color: white;
     text-align: center;
@@ -70,7 +70,7 @@ nav a:hover {
     position: relative;
 }
 
-.hero::after {
+.capa::after {
     content: '';
     position: absolute;
     top: 0;
@@ -80,19 +80,19 @@ nav a:hover {
     background: rgba(0, 0, 0, 0.5);
 }
 
-.hero-content {
+.capa-content {
     position: relative;
     z-index: 1;
     max-width: 800px;
     margin: auto;
 }
 
-.hero h2 {
+.capa h2 {
     font-size: 2.2rem;
     margin-bottom: 1rem;
 }
 
-.hero p {
+.capa p {
     margin-bottom: 1.5rem;
 }
 
@@ -110,9 +110,9 @@ nav a:hover {
     background: #8b0000;
 }
 
-/* ---------------------- */
+
 /* SEÇÃO CASTELOS */
-/* ---------------------- */
+
 .castelos {
     padding: 3rem 1rem;
     max-width: 1600px;
@@ -194,9 +194,9 @@ nav a:hover {
     color: #333;
 }
 
-/* ---------------------- */
+
 /* CURIOSIDADES */
-/* ---------------------- */
+
 .curiosidades {
     background: #fbecec;
     padding: 3rem 1rem;
@@ -235,9 +235,8 @@ nav a:hover {
     margin-bottom: 0.5rem;
 }
 
-/* ---------------------- */
 /* RODAPÉ */
-/* ---------------------- */
+
 footer {
   background: radial-gradient(circle at top left, #660000 0%, #3b0000 100%);
   color: #f5f5f5;
@@ -348,7 +347,7 @@ footer {
   font-weight: 600;
 }
 
-/* Responsividade */
+/* Responsividade footer */
 @media (max-width: 768px) {
   .footer-container {
     flex-direction: column;
@@ -365,9 +364,9 @@ footer {
   }
 }
 
-/* ---------------------- */
+
 /* RESPONSIVIDADE */
-/* ---------------------- */
+
 @media (max-width: 700px) {
     header {
         flex-direction: column;
